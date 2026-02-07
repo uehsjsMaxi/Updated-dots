@@ -1,0 +1,146 @@
+@import url("/home/maxi/.cache/wal/colors-waybar.css");
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "Adwaita Sans", "JetBrainsMono Nerd Font Propo";
+  font-weight: bold;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Waybar Fenster transparent, damit Zwischenräume durchsichtig bleiben */
+window#waybar {
+  background: transparent;
+}
+
+/* Tooltip mit schwarzem Hintergrund */
+tooltip {
+  background-color: #000000;
+  border: 1px solid @bg3;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @fg;
+  padding: 6px;
+}
+
+/* Workspaces: schwarzer Hintergrund und Textfarbe pywal */
+#workspaces {
+  background-color: #000000;
+  padding: 5px 6px;
+  margin: 0 0 0 12px;
+  border-radius: 18px;
+  border: 1px solid @bg1;
+  color: @fg;
+}
+
+/* Workspaces Buttons */
+#workspaces button {
+  padding: 0 4px;
+  margin: 0 3px;
+  border-radius: 16px;
+  background-color: @bg1;
+  transition: all 150ms ease-in-out;
+
+  /* Farbverlauf nur im Text */
+  background: linear-gradient(90deg, @color4, @color6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Aktiver Workspace Button */
+#workspaces button.active {
+  background-color: #000000; /* Schwarz, damit es passt */
+  color: @fg;                /* Textfarbe aus pywal, sichtbar auf schwarz */
+  min-width: 30px;
+  transition: all 150ms ease-in-out;
+  background: none;          /* Gradient deaktivieren */
+  -webkit-text-fill-color: initial;
+  border: 1px solid @bg1;   /* Optional: Umrandung, falls du willst */
+}
+
+
+
+/* Hover Effekt */
+#workspaces button:hover {
+  background-color: @on_primary;
+  color: #000000;
+  border-radius: 16px;
+  min-width: 30px;
+
+  /* Farbverlauf deaktivieren bei hover */
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+/* Dringender Workspace Button */
+#workspaces button.urgent {
+  background-color: @red;
+  color: #000000;
+  border-radius: 16px;
+  transition: all 150ms ease-in-out;
+
+  /* Farbverlauf deaktivieren bei urgent */
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+/* Andere Module: schwarzer Hintergrund, Textfarbe pywal */
+#clock,
+#custom-apps,
+#mpris,
+#tray,
+#pulseaudio,
+#custom-notification,
+#network {
+  background-color: #000000;
+  padding: 0 10px;
+  margin: 0 0 0 10px;
+  border-radius: 50px;
+  border: 1px solid @bg1;
+  color: @fg;
+}
+
+/* Bildschirmaufnahme-Indikator */
+#custom-screenrecording-indicator.active {
+  color: @red;
+  background-color: #000000;
+  padding: 0 10px;
+  margin: 0 0 0 10px;
+  border-radius: 50px;
+  border: 1px solid @bg1;
+}
+
+#custom-screenrecording-indicator {
+  background-color: #000000;
+  padding: 0 10px;
+  margin: 0 0 0 10px;
+  border-radius: 50px;
+  border: 1px solid @bg1;
+  color: @fg;
+}
+
+/* Textfarben von pywal für weitere Module */
+#custom-apps,
+#clock,
+#mpris,
+#pulseaudio,
+#network,
+#custom-notification {
+  color: @fg;
+}
+
+/* Aliase von pywal */
+@define-color bg0 @background;
+@define-color bg1 @color0;
+@define-color bg3 @color8;
+@define-color bg4 @color1;
+@define-color fg @foreground;
+@define-color primary @color4;
+@define-color on_primary @color6;
+@define-color red @color1;
+@define-color black @color0;
+@define-color error @color1;

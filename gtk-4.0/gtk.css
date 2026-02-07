@@ -1,0 +1,7 @@
+/* Hauptfenster transparent für Blur */
+window,
+.background,
+window.background {
+    background-color: rgba(20, 20, 20, 0.85);
+}
+
